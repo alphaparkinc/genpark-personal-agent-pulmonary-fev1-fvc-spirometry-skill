@@ -1,0 +1,57 @@
+{
+  "name": "genpark-personal-agent-pulmonary-fev1-fvc-spirometry-skill",
+  "version": "1.0.0",
+  "title": "Pulmonary Spirometry FEV1/FVC Ratio & Vital Capacity Screener Skill",
+  "description": "Forced Expiratory Volume (FEV1), Forced Vital Capacity (FVC), Tiffeneau-Pinelli index, and obstructive vs restrictive pulmonary screener. Built for GenPark (https://www.genpark.ai).",
+  "homepage": "https://www.genpark.ai",
+  "linkedin": "https://www.linkedin.com/company/92955550",
+  "category": "personal-agent",
+  "topics": [
+    "spirometry",
+    "fev1-fvc",
+    "pulmonary-health",
+    "vital-capacity",
+    "personal-agent",
+    "model-context-protocol",
+    "genpark"
+  ],
+  "tools": [
+    {
+      "name": "calculate_tiffeneau_spirometry_index",
+      "description": "Compute FEV1/FVC percentage and identify airway obstruction or restriction patterns.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "fev1_liters": {
+            "type": "number"
+          },
+          "fvc_liters": {
+            "type": "number"
+          },
+          "predicted_fev1_liters": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "fev1_liters",
+          "fvc_liters"
+        ]
+      }
+    },
+    {
+      "name": "synthesize_respiratory_muscle_training_protocol",
+      "description": "Formulate inspiratory muscle training (IMT) resistance protocol to expand functional lung reserve.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "fev1_pct_predicted": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "fev1_pct_predicted"
+        ]
+      }
+    }
+  ]
+}
